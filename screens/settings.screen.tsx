@@ -1,19 +1,26 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {View, Text, StyleSheet, Button} from 'react-native';
 import Header from '../components/header.component';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
-export default function SettingsScreen() {
+const SettingsScreen = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header title={'Settings'}></Header>
-     </View>
+      <Button
+        title={'logout'}
+        onPress={() =>
+          navigation.navigate('MyStack', {screen: 'Welcome'})
+        }></Button>
+    </SafeAreaView>
   );
-}
-
+};
 
 const styles = StyleSheet.create({
-    container: {
-      // backgroundColor:'#abf5ce',
-      flex:1
-    },
-  });
+  container: {
+    // backgroundColor: '#abf5ce',
+    flex: 1,
+  },
+});
+
+export default SettingsScreen;

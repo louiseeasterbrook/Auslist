@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {BLACK, DARK_GREY, GREY} from '../styles/CommonStyles';
+import {GREY, MAIN, WHITE} from '../styles/CommonStyles';
 
-export default function ListItem(props: {title: string}) {
+export default function CategoryItem(props: {title: string}) {
   return (
     <TouchableOpacity>
       <View style={styles.container}>
@@ -14,15 +14,13 @@ export default function ListItem(props: {title: string}) {
 
 const styles = StyleSheet.create({
   container: {
-    // borderRadius: 20,
-    // marginVertical: 4,
-    borderBottomColor: DARK_GREY,
-    borderBottomWidth: 1,
-    // backgroundColor: GREY,
-    paddingVertical: 18,
-    paddingHorizontal: 24,
+    borderRadius: 20,
+    backgroundColor: MAIN,
+    paddingVertical: 10,
+    paddingHorizontal: 18,
+    marginRight: 8,
   },
   text: {
-    color: BLACK,
+    color: WHITE,
   },
 });
