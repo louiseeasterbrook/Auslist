@@ -4,7 +4,7 @@ import BottomTabNav from './bottomTabNav.component';
 import {NavigationContainer} from '@react-navigation/native';
 import {useEffect, useState} from 'react';
 import {User, onAuthStateChanged} from 'firebase/auth';
-import {FIREBASE_AUTH} from '../utils/firebaseConfig';
+import {FIREBASE_AUTH} from '../app/utils/firebaseConfig';
 
 const Stack = createStackNavigator();
 

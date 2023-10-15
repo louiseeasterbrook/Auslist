@@ -16,7 +16,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
-import {FIREBASE_AUTH} from '../../utils/firebaseConfig';
+import {FIREBASE_AUTH} from '../utils/firebaseConfig';
 import {FIREBASE_API_KEY} from '@env';
 
 const WelcomeScreen = ({navigation}) => {
