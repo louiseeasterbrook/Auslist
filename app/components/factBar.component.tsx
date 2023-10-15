@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {BLACK, GREY, MAIN, WHITE} from '../styles/CommonStyles';
+import {BLACK, GREY, MAIN, WHITE} from '../../styles/CommonStyles';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function FoodBar() {
+export default function FactBar() {
   const [barLocked, setBarLocked] = useState<boolean>(true);
   return (
     <TouchableOpacity onPress={() => setBarLocked(!barLocked)}>
@@ -12,7 +12,7 @@ export default function FoodBar() {
           <View style={styles.waitContainer}>
             <View style={styles.iconContainer}>
               <MaterialCommunityIcons
-                name="baguette"
+                name="book-outline"
                 size={30}
                 color={BLACK}></MaterialCommunityIcons>
             </View>
@@ -21,7 +21,7 @@ export default function FoodBar() {
           <View style={styles.resultContainer}>
             <View style={styles.iconContainer}>
               <MaterialCommunityIcons
-                name="baguette"
+                name="book-outline"
                 size={30}
                 color={BLACK}></MaterialCommunityIcons>
             </View>
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   container: {
     marginHorizontal: 14,
     borderRadius: 20,
-    marginTop: 0,
+    marginTop: 12,
   },
   resultContainer: {
     backgroundColor: MAIN,

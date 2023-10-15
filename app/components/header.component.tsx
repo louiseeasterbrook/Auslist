@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, TextInput} from 'react-native';
-import {BACKGROUND_MAIN, MAIN, WHITE} from '../styles/CommonStyles';
+import {BACKGROUND_MAIN, MAIN, WHITE} from '../../styles/CommonStyles';
 
 export default function Header(props: {title: string}) {
   const [text, setText] = useState('');

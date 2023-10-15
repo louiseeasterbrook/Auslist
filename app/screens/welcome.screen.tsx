@@ -11,12 +11,12 @@ import {
 } from 'react-native';
 import Header from '../components/header.component';
 import {TextInput} from 'react-native-gesture-handler';
-import {WHITE} from '../styles/CommonStyles';
+import {WHITE} from '../../styles/CommonStyles';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
-import {FIREBASE_AUTH} from '../utils/firebaseConfig';
+import {FIREBASE_AUTH} from '../../utils/firebaseConfig';
 import {FIREBASE_API_KEY} from '@env';
 
 const WelcomeScreen = ({navigation}) => {

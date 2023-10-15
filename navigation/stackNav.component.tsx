@@ -1,5 +1,5 @@
 import {createStackNavigator} from '@react-navigation/stack';
-import WelcomeScreen from '../screens/welcome.screen';
+import WelcomeScreen from '../app/screens/welcome.screen';
 import BottomTabNav from './bottomTabNav.component';
 import {NavigationContainer} from '@react-navigation/native';
 import {useEffect, useState} from 'react';

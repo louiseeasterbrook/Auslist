@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, FlatList, StyleSheet, ScrollView} from 'react-native';
 import ListItem from './ListItem.component';
 import CategoryItem from './CategoryItem.component';
-import {BLACK, GREY, SIDE_PADDING} from '../styles/CommonStyles';
+import {BLACK, GREY, SIDE_PADDING} from '../../styles/CommonStyles';
 // import {} from 'react-native-gesture-handler';
 
 export default function CheckList() {

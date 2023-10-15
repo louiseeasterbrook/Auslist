@@ -4,7 +4,7 @@ import Header from '../components/header.component';
 import FoodBar from '../components/foodBar.component';
 import CheckList from '../components/checkList.component';
 import FactBar from '../components/factBar.component';
-import {BACKGROUND_MAIN, BLACK, SIDE_PADDING} from '../styles/CommonStyles';
+import {BACKGROUND_MAIN, BLACK, SIDE_PADDING} from '../../styles/CommonStyles';
 import {FlatList} from 'react-native-gesture-handler';
 import CategoryItem from '../components/CategoryItem.component';
 

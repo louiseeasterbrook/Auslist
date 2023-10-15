@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 import Header from '../components/header.component';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import { FIREBASE_AUTH } from '../utils/firebaseConfig';
+import {FIREBASE_AUTH} from '../../utils/firebaseConfig';
 
 const SettingsScreen = ({navigation}) => {
   return (

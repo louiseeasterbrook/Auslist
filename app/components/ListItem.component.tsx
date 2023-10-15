@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {BLACK, DARK_GREY, GREY} from '../styles/CommonStyles';
+import {BLACK, DARK_GREY, GREY} from '../../styles/CommonStyles';
 
 export default function ListItem(props: {title: string}) {
   return (

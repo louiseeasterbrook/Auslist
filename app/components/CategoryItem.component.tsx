@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {GREY, MAIN, WHITE} from '../styles/CommonStyles';
+import {GREY, MAIN, WHITE} from '../../styles/CommonStyles';
 
 export default function CategoryItem(props: {title: string}) {
   return (
