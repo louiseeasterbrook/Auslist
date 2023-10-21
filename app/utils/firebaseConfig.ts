@@ -29,22 +29,23 @@ export const FIREBASE_AUTH = initializeAuth(FIREBASE_APP, {
 });
 
 export const initFirebaseConfig = async () => {
-
+  await remoteConfig().setConfigSettings({minimumFetchIntervalMillis: 0});
   await remoteConfig()
     .setDefaults({})
     .then(() => remoteConfig().fetchAndActivate())
-    .then(fetchedRemotely => {
-      if (fetchedRemotely) {
-        console.log(
-          '+++Configs were retrieved from the backend and activated.',
-        );
-        console.log(fetchedRemotely);
-      } else {
-        console.log(
-          '---No configs were fetched from the backend, and the local configs were already activated',
-        );
-      }
-    });
+    // .then(fetchedRemotely => {
+    //   if (fetchedRemotely) {
+    //     console.log(
+    //       '+++Configs were retrieved from the backend and activated.',
+    //     );
+    //     console.log(fetchedRemotely);
+    //   } else {
+    //     console.log(
+    //       '---No configs were fetched from the backend, and the local configs were already activated',
+    //     );
+    //   }
+    // }
+    // );
 
   const parameters = remoteConfig().getAll();
   Object.entries(parameters).forEach($ => {
