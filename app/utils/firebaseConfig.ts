@@ -1,22 +1,10 @@
-// Import the functions you need from the SDKs you need
 import {initializeApp} from 'firebase/app';
-import {getAnalytics} from 'firebase/analytics';
-import * as firebase from 'firebase/app';
-// import {
-//   getReactNativePersistence,
-//   initializeAuth,
-// } from 'firebase/auth/react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-// import {getAuth, initializeAuth} from 'firebase/auth';
 import {FIREBASE_API_KEY} from '@env';
+import {initializeAuth, getReactNativePersistence} from 'firebase/auth';
 
-import {
-  initializeAuth,
-  getReactNativePersistence,
-  getAuth,
-} from 'firebase/auth';
-import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
+//config imports
+import remoteConfig from '@react-native-firebase/remote-config';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -39,3 +27,31 @@ export const FIREBASE_APP = initializeApp(firebaseConfig);
 export const FIREBASE_AUTH = initializeAuth(FIREBASE_APP, {
   persistence: getReactNativePersistence(AsyncStorage),
 });
+
+export const initFirebaseConfig = async () => {
+
+  await remoteConfig()
+    .setDefaults({})
+    .then(() => remoteConfig().fetchAndActivate())
+    .then(fetchedRemotely => {
+      if (fetchedRemotely) {
+        console.log(
+          '+++Configs were retrieved from the backend and activated.',
+        );
+        console.log(fetchedRemotely);
+      } else {
+        console.log(
+          '---No configs were fetched from the backend, and the local configs were already activated',
+        );
+      }
+    });
+
+  const parameters = remoteConfig().getAll();
+  Object.entries(parameters).forEach($ => {
+    const [key, entry] = $;
+    console.log('--Key: ', key);
+    console.log('--Source: ', entry.getSource());
+    console.log('--Value: ', entry.asString());
+    console.log('--------------------------------');
+  });
+};

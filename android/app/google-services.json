@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "277437233843",
+    "project_id": "auslist-e7254",
+    "storage_bucket": "auslist-e7254.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:277437233843:android:0ea6d3b47df879188c4ec6",
+        "android_client_info": {
+          "package_name": "com.auslistapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDU1IL0b-jH8YDbYJlqTPcUNuCCtnK3fo4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

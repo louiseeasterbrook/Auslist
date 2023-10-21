@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -16,18 +16,25 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
-import {FIREBASE_AUTH} from '../utils/firebaseConfig';
+import {FIREBASE_AUTH, initFirebaseConfig} from '../utils/firebaseConfig';
 import {FIREBASE_API_KEY} from '@env';
 
 const WelcomeScreen = ({navigation}) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const auth = FIREBASE_AUTH;
 
   const signIn = async () => {
     try {
-      const response = await signInWithEmailAndPassword(auth, email, password);
+      const response = await signInWithEmailAndPassword(
+        FIREBASE_AUTH,
+        email,
+        password,
+      );
+      console.log('000000000000000000');
+      console.log('000000000000000000');
+      console.log('000000000000000000');
       console.log('---login res ', response);
+      // initFirebaseConfig();
       navigation.navigate('TabNavigator', {screen: 'Home'});
     } catch (error) {
       twoOptionAlert(error);
@@ -38,7 +45,7 @@ const WelcomeScreen = ({navigation}) => {
   const signUp = async () => {
     try {
       const response = await createUserWithEmailAndPassword(
-        auth,
+        FIREBASE_AUTH,
         email,
         password,
       );

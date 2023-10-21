@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import Header from '../components/header.component';
 import FoodBar from '../components/foodBar.component';
@@ -7,8 +7,12 @@ import FactBar from '../components/factBar.component';
 import {BACKGROUND_MAIN, BLACK, SIDE_PADDING} from '../../styles/CommonStyles';
 import {FlatList} from 'react-native-gesture-handler';
 import CategoryItem from '../components/CategoryItem.component';
+import {initFirebaseConfig} from '../utils/firebaseConfig';
 
 export default function HomeScreen() {
+  // useEffect(() => {
+  //   initFirebaseConfig();
+  // }, []);
   return (
     <SafeAreaView style={styles.container}>
       <Header title={'AusList'}></Header>
