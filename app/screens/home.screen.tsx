@@ -1,18 +1,25 @@
 import React, {useEffect} from 'react';
-import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
+
+import {ScrollView} from 'react-native-virtualized-view'; // to avoid build warning
 import Header from '../components/header.component';
 import FoodBar from '../components/foodBar.component';
 import CheckList from '../components/checkList.component';
 import FactBar from '../components/factBar.component';
-import {BACKGROUND_MAIN, BLACK, SIDE_PADDING} from '../../styles/CommonStyles';
+import {BLACK, SIDE_PADDING} from '../../styles/CommonStyles';
 import {FlatList} from 'react-native-gesture-handler';
 import CategoryItem from '../components/CategoryItem.component';
-import {initFirebaseConfig} from '../utils/firebaseConfig';
+import {useStores} from '../store/mainStore';
 
 export default function HomeScreen() {
-  // useEffect(() => {
-  //   initFirebaseConfig();
-  // }, []);
+  const hello = useStores();
+
+  useEffect(() => {
+    console.log('helllo ', hello);
+    hello.setMainColor('blue ');
+    console.log('========', hello?.mainColor);
+  });
+
   return (
     <SafeAreaView style={styles.container}>
       <Header title={'AusList'}></Header>
