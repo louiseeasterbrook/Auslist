@@ -4,19 +4,28 @@ import BottomTabNav from './bottomTabNav.component';
 import {NavigationContainer} from '@react-navigation/native';
 import {useEffect, useState} from 'react';
 import {User, onAuthStateChanged} from 'firebase/auth';
-import {FIREBASE_AUTH, initFirebaseConfig} from '../app/utils/firebaseConfig';
+import {
+  FIREBASE_AUTH,
+  getRemoteConfigValue,
+  initFirebaseConfig,
+} from '../app/utils/firebaseConfig';
+import {useStores} from '../app/store/mainStore';
 
 const Stack = createStackNavigator();
 
 export default function MyStack() {
+  const mainStore = useStores();
   const [user, setUser] = useState<User | null>(null);
   useEffect(() => {
+    initFirebaseConfig();
+
     onAuthStateChanged(FIREBASE_AUTH, user => {
       setUser(user);
-      console.log('user changes ', user);
+      console.log('user changes ', user?.email);
       if (user) {
-        initFirebaseConfig().then(x => console.log('donxw'));
-        console.log('USER EXISTIS ');
+        const appVersion = getRemoteConfigValue('appVersion');
+        console.log('TEY ', appVersion);
+        // mainStore.setAppVersion(appVersion);
       }
     });
   }, []);

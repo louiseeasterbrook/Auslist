@@ -32,20 +32,7 @@ export const initFirebaseConfig = async () => {
   await remoteConfig().setConfigSettings({minimumFetchIntervalMillis: 0});
   await remoteConfig()
     .setDefaults({})
-    .then(() => remoteConfig().fetchAndActivate())
-    // .then(fetchedRemotely => {
-    //   if (fetchedRemotely) {
-    //     console.log(
-    //       '+++Configs were retrieved from the backend and activated.',
-    //     );
-    //     console.log(fetchedRemotely);
-    //   } else {
-    //     console.log(
-    //       '---No configs were fetched from the backend, and the local configs were already activated',
-    //     );
-    //   }
-    // }
-    // );
+    .then(() => remoteConfig().fetchAndActivate());
 
   const parameters = remoteConfig().getAll();
   Object.entries(parameters).forEach($ => {
@@ -55,4 +42,8 @@ export const initFirebaseConfig = async () => {
     console.log('--Value: ', entry.asString());
     console.log('--------------------------------');
   });
+};
+
+export const getRemoteConfigValue = (key: string) => {
+  const hello = remoteConfig().getValue(key);
 };

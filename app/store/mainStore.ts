@@ -7,10 +7,19 @@ export const MainStore = types
   .model('MainStore')
   .props({
     mainColor: types.optional(types.string, 'green'),
+    appVersion: types.optional(types.string, '0.0.0'),
   })
+  .views(self => ({
+    get appVersionString() {
+      return self.appVersion;
+    },
+  }))
   .actions(self => ({
     setMainColor: (color: string) => {
       self.mainColor = color;
+    },
+    setAppVersion: (appVersion: string) => {
+      self.appVersion = appVersion;
     },
   }));
 
